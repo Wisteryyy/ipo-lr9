@@ -20,10 +20,3 @@ def intersectionAreaRect(coords1, coords2): # функция
         return cross_area
     else:
         return 0
-    
-# try:
-#     print(intersectionAreaRect([(-3, 1), (9, 10)], [(-7, 0), (13, 12)]))
-#     print(intersectionAreaRect([(1, 1), (2, 2)], [(3, 0), (13, 1)]))
-#     print(intersectionAreaRect([(1, 1), (2, 2)], [(3, 17), (13, 1)]))
-# except RectCorrectError as e:
-#     print(e)
