@@ -15,5 +15,5 @@ def isCorrectRect(coords):
     else:
         return False
 
-print(isCorrectRect([(-3.4, 1), (9.2, 10)]))
-print(isCorrectRect([(-7, 9), (3, 6)]))
+# print(isCorrectRect([(-3.4, 1), (9.2, 10)]))
+# print(isCorrectRect([(-7, 9), (3, 6)]))
