@@ -11,10 +11,3 @@ def isCollisionRect(coords1, coords2):
         raise RectCorrectError("2й прямоугольник некоректный")
 
     return x11 < x22 and x12 > x21 and y11 < y22 and y12 > y21
-
-# try:
-#     print(isCollisionRect([(-3.4, 1), (9.2, 10)], [(-7.4, 0), (13.2, 12)]))
-#     print(isCollisionRect([(1, 1), (2, 2)], [(3, 0), (13, 1)]))
-#     print(isCollisionRect([(1, 1), (2, 2)], [(3, 17), (13, 1)]))
-# except RectCorrectError as e:
-#     print(e)
