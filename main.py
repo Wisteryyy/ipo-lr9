@@ -79,19 +79,14 @@ if a == 4:
                         x2 = float(input("Введите x2: "))
                         y2 = float(input("Введите y2: "))
                         
-                        if x1 >= x2 or y1 >= y2:
-                            print("Координаты некорректны: x1 должно быть меньше x2, а y1 должно быть меньше y2.")
-                        else:
-                            rectangles.append([(x1, y1), (x2, y2)])
-                            break
-                    
+                        rectangles.append([(x1, y1), (x2, y2)])
+                        break
                     except ValueError:
                         print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")
 
             result = intersectionAreaMultiRect(rectangles)
             print(f"Уникальная площадь пересечения: {result}")
             break
-            
         except ValueError:
             print("Введенное Вами число должно быть целое. Попробуйте еще раз.")
 
