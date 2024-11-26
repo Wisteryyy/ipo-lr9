@@ -16,8 +16,8 @@ def intersectionAreaRect(coords1, coords2): # функция
     cross_y2 = min(y12, y22)
 
     if cross_x1 < cross_x2 and cross_y1 < cross_y2: # проверяем, пересекаются ли прямоугольники. для этого левый нижний угол пересечения должен быть меньше, чем правый верхний угол
-        intersection_area = (cross_x2 - cross_x1) * (cross_y2 - cross_y1) # если пересечение существует, рассчитываем его площадь как произведение ширины (intersection_x2 - intersection_x1) и высоты (intersection_y2 - intersection_y1)
-        return intersection_area
+        cross_area = (cross_x2 - cross_x1) * (cross_y2 - cross_y1) # если пересечение существует, рассчитываем его площадь как произведение ширины (cross_x2 - cross_x1) и высоты (cross_y2 - cross_y1)
+        return cross_area
     else:
         return 0
     
