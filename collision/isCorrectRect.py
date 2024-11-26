@@ -14,6 +14,3 @@ def isCorrectRect(coords):
         return True
     else:
         return False
-
-# print(isCorrectRect([(-3.4, 1), (9.2, 10)]))
-# print(isCorrectRect([(-7, 9), (3, 6)]))
