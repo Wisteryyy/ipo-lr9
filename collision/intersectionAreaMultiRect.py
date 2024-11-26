@@ -39,23 +39,3 @@ def intersectionAreaMultiRect(rectangles):
                 unique_areas.add(area)
 
     return sum(unique_areas) # возвращаем сумму всех уникальных площадей пересечения прямоугольников
-
-# rectangles = [
-#     [(-3, 1), (9, 10)],
-#     [(-7, 0), (13, 12)],
-#     [(0, 0), (5, 5)],
-#     [(2, 2), (7, 7)]
-# ]
-
-# result = intersectionAreaMultiRect(rectangles)
-# print(f"Уникальная площадь пересечения: {result}")
-
-# incorrect_rectangles = [
-#     [(-3, 1), (9, 10)],
-#     [(3, 17), (13, 1)]
-# ]
-
-# try:
-#     intersectionAreaMultiRect(incorrect_rectangles)
-# except RectCorrectError as e:
-#     print(e)
