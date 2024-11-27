@@ -53,7 +53,8 @@ while status:
                 print(isCorrectRect([(x1, y1),(x2, y2)]))
                 break
             except ValueError:
-                print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")       
+                print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")
+
     elif a == 2:
         while True:
             try:
@@ -67,11 +68,12 @@ while status:
                 y22 = float(input("Введите координату y22: "))
                 try:
                     print(isCollisionRect([(x11, y11), (x12, y12)], [(x21, y21), (x22, y22)]))
-                except RectCorrectError as e:
+                except ValueError as e:
                     print(e)
                 break
             except ValueError:
-                print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")          
+                print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.") 
+         
     elif a == 3:
         while True:
             try:
@@ -85,11 +87,12 @@ while status:
                 y22 = float(input("Введите координату y22: "))
                 try:
                     print(intersectionAreaRect([(x11, y11), (x12, y12)], [(x21, y21), (x22, y22)]))
-                except RectCorrectError as e:
+                except ValueError as e:
                     print(e)
                 break
             except ValueError:
-                print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")          
+                print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")
+
     elif a == 4:
         while True:
             try:
@@ -104,17 +107,21 @@ while status:
                             y1 = float(input("Введите y1: "))
                             x2 = float(input("Введите x2: "))
                             y2 = float(input("Введите y2: "))
-                            
                             rectangles.append([(x1, y1), (x2, y2)])
                             break
                         except ValueError:
                             print("Введенное Вами число должно быть целое или дробное. Попробуйте еще раз.")
 
-                result = intersectionAreaMultiRect(rectangles)
-                print(f"Уникальная площадь пересечения: {result}")
+                try:
+                    result = intersectionAreaMultiRect(rectangles)
+                    print(f"Уникальная площадь пересечения: {result}")
+                except ValueError as e:
+                    print(e)
                 break
+
             except ValueError:
                 print("Введенное Вами число должно быть целое. Попробуйте еще раз.")
+
     elif a == 5:
         status = False
     else:
