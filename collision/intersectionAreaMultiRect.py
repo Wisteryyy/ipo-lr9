@@ -6,9 +6,9 @@ def intersectionAreaRect(coords1, coords2):
     (x21, y21), (x22, y22) = coords2
 
     if x11 >= x12 or y11 >= y12: # проверка корректности прямоугольников
-        raise RectCorrectError("Первый прямоугольник некорректный.")
+        raise ValueError("Первый прямоугольник некорректный.")
     if x21 >= x22 or y21 >= y22:
-        raise RectCorrectError("Второй прямоугольник некорректный.")
+        raise ValueError("Второй прямоугольник некорректный.")
 
     intersection_x1 = max(x11, x21) # это максимальные значения координат левого нижнего угла пересекающегося прямоугольника, так как пересечение начинается от максимального значения левых нижних углов исходных прямоугольников
     intersection_y1 = max(y11, y21)
@@ -24,11 +24,11 @@ def intersectionAreaRect(coords1, coords2):
 def intersectionAreaMultiRect(rectangles):
     for index, rect in enumerate(rectangles, start=1): # перебираем все прямоугольники в списке. enumerate используется, чтобы получить индекс каждого прямоугольника, начиная с 1
         if len(rect) != 2 or not all(isinstance(cord, tuple) and len(cord) == 2 for cord in rect): # проверяем, что каждый прямоугольник состоит ровно из двух элементов(кортежей) и что каждый из этих элементов является кортежем длины 2
-            raise RectCorrectError(f"{index} прямоугольник некорректный: должна быть пара кортежей.")
+            raise ValueError(f"{index} прямоугольник некорректный: должна быть пара кортежей.")
         
         (x1, y1), (x2, y2) = rect # извлекаем координаты и делаем повторную проверку
         if x1 >= x2 or y1 >= y2:
-            raise RectCorrectError(f"{index} прямоугольник в списке прямоугольников неккоректный.")
+            raise ValueError(f"{index} прямоугольник в списке прямоугольников неккоректный.")
 
     unique_areas = set()
     
