@@ -41,7 +41,15 @@ while status:
     print("------4. intersectionAreaMultiRect-")
     print("------5. Выход из программы--------")
 
-    a = int(input("Введите номер проверяемой функции: "))
+    b = input("Введите номер проверяемой функции: ")
+    try:
+        a = int(b)
+        if a < 1 or a > 5:
+            print("Введите корректный номер от 1 до 5.")
+            continue
+    except ValueError:
+        print("Введите число.")
+        continue
 
     if a == 1:
         while True:
@@ -124,5 +132,3 @@ while status:
 
     elif a == 5:
         status = False
-    else:
-        print("Введенное Вами число некорректно. Попробуйте еще раз.")
